@@ -1,0 +1,40 @@
+﻿@model List<stelleracunakademiportfolio.Models.tbl_Feature>
+
+
+<header class="header" id="home">
+    @foreach (var item in Model)
+    {
+    <div class="container">
+        <div class="infos">
+            <h6 class="subtitle">@item.Title</h6>
+            <h6 class="title">@item.NameSurname</h6>
+            <p>@item.Job</p>
+
+            <div class="buttons pt-3">
+                <button  href="#contact" class="btn btn-primary rounded">İletişime Geçin</button>
+                <a class="btn btn-dark rounded" href="@item.CvDownloadUrl" target="_blank">CV indir</a>
+            </div>
+            @Html.Action("DefaultSocialMediaPartial")
+            
+        </div>
+        <div class="img-holder">
+            <img src="@item.ImageUrl" alt="">
+        </div>
+    </div>
+    }
+    <!-- Header-widget -->
+    <div class="widget">
+        <div class="widget-item">
+            <h2>@ViewBag.testimonial</h2>
+            <p>Referans Sayısı</p>
+        </div>
+        <div class="widget-item">
+            <h2>@ViewBag.project</h2>
+            <p>Proje Sayısı</p>
+        </div>
+        <div class="widget-item">
+            <h2>@ViewBag.skill</h2>
+            <p>Teknolojik Yetkinlikler</p>
+        </div>
+    </div>
+</header>

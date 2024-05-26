@@ -1,0 +1,41 @@
+﻿
+@{
+    Layout = "~/Views/UILayout/Index.cshtml";
+}
+
+
+<!-- Page Header -->
+@Html.Action("DefaultFeaturePartial")
+<!-- End of Page Header -->
+<!-- About section -->
+@Html.Action("DefaultAboutPartial")
+<!-- Service section -->
+@Html.Action("DefaultServicePartial")
+<!-- End of Sectoin -->
+<!-- Skills section -->
+@Html.Action("DefaultSkillPartial")
+<!-- End of Skills sections -->
+<!-- Portfolio section -->
+@Html.Action("DefaultProjectPartial")
+<!-- End of portfolio section -->
+<!-- Testmonial Section -->
+@Html.Action("DefaultTestimonialPartial")
+<!-- End of testmonial section -->
+<!-- Blog Section -->
+@Html.Action("DefaultBlogPartial")
+<!-- End of Blog section -->
+<!-- Contact Section -->
+
+<section id="contact" class="position-relative section">
+    <div class="container text-center">
+        <h6 class="subtitle">İletişim</h6>
+        <h6 class="section-title mb-4">Benimle İletişime Geçebilirsiniz</h6>
+        <p class="mb-5 pb-4">Her türlü soru ve proje çalışmaları için benimle aşağıdaki formdan iletişime geçebilirsiniz.</p>
+
+        <div class="contact text-left">
+            @Html.Action("SendMessage")
+            @Html.Action("DefaultContactInfoPartial")
+
+
+</section>
+<!-- End of Contact Section -->

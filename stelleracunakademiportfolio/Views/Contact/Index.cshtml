@@ -1,0 +1,38 @@
+﻿@model List<stelleracunakademiportfolio.Models.tbl_contact>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+    int count = 0;
+}
+
+<h2>İletişim Bilgileri</h2>
+
+<table class="table table-bordered table-hover">
+    <tr>
+        <th>#</th>
+        <th>Phone</th>
+        <th>Email</th>
+        <th>Adres</th>
+        <th>Harita Url</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+
+    </tr>
+    @foreach (var item in Model)
+    {
+        count++;
+        <tr>
+            <th>@count</th>
+            <td>@item.phone </td>
+            <td>@item.Email</td>
+            <td>@item.adress</td>
+            <td><a href="@item.MapUrl" target="_blank">Harita Linki</a></td>
+            <td><a href="/Contact/DeleteContact/@item.contactID" class="btn btn-outline-danger">Sil</a></td>
+            <td><a href="/Contact/UpdateContact/@item.contactID" class="btn btn-outline-info">Güncelle</a></td>
+        </tr>
+    }
+</table>
+
+<br />
+
+<a href="/Contact/AddContact" class="btn btn-outline-primary">Yeni İletişim Bilgisi Ekleme</a>

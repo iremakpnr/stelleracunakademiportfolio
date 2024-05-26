@@ -1,0 +1,25 @@
+﻿﻿@model stelleracunakademiportfolio.Models.tbl_Blog
+@{
+    ViewBag.Title = "AddBlog";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+
+<h3>Yeni Makale Ekleme Sayfası</h3>
+
+<form method="post">
+    <label>Makale Başlığı</label>
+    @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+    <br />
+    <label>Makale Bağlantısı</label>
+    @Html.TextBoxFor(x => x.Url, new { @class = "form-control" })
+    <br />
+    <label>Makale Açıklaması</label>
+    @Html.TextBoxFor(x => x.Description, new { @class = "form-control" })
+    <br />
+    <label>Makalenin Yazarı</label>
+    @Html.TextBoxFor(x => x.Writer, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-outline-primary">Kaydet</button>
+
+</form>
+

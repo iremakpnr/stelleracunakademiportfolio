@@ -1,0 +1,19 @@
+﻿﻿@model stelleracunakademiportfolio.Models.tbl_skill
+@{
+    ViewBag.Title = "AddSkill";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+
+<h3>Yeni Yetenek Ekleme Sayfası</h3>
+
+<form method="post">
+    <label>Yetenek Adı</label>
+    @Html.TextBoxFor(x => x.skillname, new { @class = "form-control" })
+    <br />
+    <label>Yüzdelik Değer</label>
+    @Html.TextBoxFor(x => x.value, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-outline-primary">Kaydet</button>
+
+</form>
+

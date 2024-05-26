@@ -1,0 +1,21 @@
+﻿@model stelleracunakademiportfolio.Models.tbl_socialmedia
+@{
+    ViewBag.Title = "AddSocialMedia";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+
+<h3>Yeni Sosyal Medya Ekleme Sayfası</h3>
+
+<form method="post">
+    <label>Sosyal Medya Adı</label>
+    @Html.TextBoxFor(x => x.SocialMediaLink, new { @class = "form-control" })
+    <br />
+    <label>Sosyal Medya Url</label>
+    @Html.TextBoxFor(x => x.Url, new { @class = "form-control" })
+    <br />
+    <label>İkon</label>
+    @Html.TextBoxFor(x => x.icon, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-outline-primary">Kaydet</button>
+</form>
+

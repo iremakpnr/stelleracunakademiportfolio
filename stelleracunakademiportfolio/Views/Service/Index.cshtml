@@ -1,0 +1,45 @@
+﻿﻿@model List<stelleracunakademiportfolio.Models.tbl_service>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+    int count = 0;
+}
+
+
+<h3>Hizmetlerim</h3>
+
+<table class="table table-bordered table-hover">
+    <tr>
+        <th>#</th>
+        <th>Hizmet Adı</th>
+        <th>İkon</th>
+        <th>Durum</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+        <th>Aktif Yap</th>
+        <th>Pasif Yap</th>
+
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        count++;
+        <tr>
+            <th>@count</th>
+            <td>@item.servicename  </td>
+            <td>@item.serviceikon</td>
+            <td>@(item.servicestatus==true ? "Aktif" : "Pasif" )</td>
+
+            <td><a href="/Service/DeleteService/@item.serviceID" class="btn btn-outline-danger">Sil</a></td>
+            <td><a href="/Service/UpdateService/@item.serviceID" class="btn btn-outline-info">Güncelle</a></td>
+            <td><a href="/Service/MakeActive/@item.serviceID" class="btn btn-outline-success">Aktif Yap</a></td>
+            <td><a href="/Service/MakePassive/@item.serviceID" class="btn btn-outline-secondary">Pasif Yap</a></td>
+        </tr>
+    }
+
+
+</table>
+
+<br />
+
+<a href="/Service/AddService" class="btn btn-outline-primary">Yeni Hizmet Ekle</a>

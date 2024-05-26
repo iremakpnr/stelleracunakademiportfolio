@@ -1,0 +1,25 @@
+﻿@model stelleracunakademiportfolio.Models.tbl_testimanional
+@{
+    ViewBag.Title = "UpdateTestimonial";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+
+<h2>Testimonial Düzenleme</h2>
+<form method="post">
+    @Html.HiddenFor(x => x.TestimanionalID)
+    <label>Title</label>
+    @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+    <br />
+    <label>Açıklama</label>
+    @Html.TextBoxFor(x => x.Description, new { @class = "form-control" })
+    <br />
+    <label>İsim Soyisim</label>
+    @Html.TextBoxFor(x => x.NameSurname, new { @class = "form-control" })
+    <br />
+    <label>Resim</label>
+    @Html.TextBoxFor(x => x.image, new { @class = "form-control" })
+    <br />
+
+    <button class="btn btn-outline-primary">Güncelle</button>
+
+</form>

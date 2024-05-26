@@ -1,0 +1,27 @@
+﻿﻿@model stelleracunakademiportfolio.Models.tbl_message
+@{
+    ViewBag.Title = "MessageDetail";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h3>Mesaj Detayları</h3>
+
+<table class="table table-striped">
+    <tr>
+        <th>Gönderen Ad Soyad:</th>
+        <td>@Model.NameSurname</td>
+    </tr>
+
+    <tr>
+        <th>Gönderen Email:</th>
+        <td>@Model.Email</td>
+    </tr>
+
+    <tr>
+        <th>Mesaj içeriği:</th>
+        <td>@Model.messageContent</td>
+    </tr>
+
+
+
+</table>

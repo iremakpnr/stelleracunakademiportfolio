@@ -1,0 +1,35 @@
+﻿@model List<stelleracunakademiportfolio.Models.tbl_abouti>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+<h3> HAKKIMDA SAYFASI </h3>
+<br />
+
+<table class="table table-bordered ">
+    <tr>
+       <th>#</th>
+       <th>Resim</th>
+       <th>Ad Soyad</th>
+       <th>Açıklama</th>
+       <th>Unvan</th>
+       <th>sil</th>
+       <th>güncelle</th>
+    </tr>
+
+    @foreach (var item in Model)
+      {
+<tr>
+    <th>@item.AboutID</th>
+    <td><img src="@item.image" style="height:50px;width:50px;"></td>
+    <td>@item.NameSurname</td>
+    <td>@item.Description</td>
+    <td>@item.title</td>
+    <td><a href="/About/Deleteabouti/@item.AboutID" class="btn btn-outline-danger">sil</a></td>
+    <td><a href="/About/UpdateAbout/@item.AboutID" class="btn btn-outline-info">güncelle</a></td>
+</tr> 
+      }
+</table>
+<br />
+<a href="/About/AddAbout" class="btn btn-outline-primary">Yeni Hakkımda Bilgisi Ekle</a>
+

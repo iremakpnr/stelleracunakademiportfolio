@@ -1,0 +1,25 @@
+﻿@model stelleracunakademiportfolio.Models.tbl_project
+@{
+    ViewBag.Title = "AddProject";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+
+<h2>Yeni Proje Ekleme Sayfası</h2>
+
+<form method="post">
+    <label>Açıklama</label>
+    @Html.TextBoxFor(x => x.description, new { @class = "form-control" })
+    <br />
+    <label>Resim Linki</label>
+    @Html.TextBoxFor(x => x.imageUrl, new { @class = "form-control" })
+    <br />
+    <label>Metin</label>
+    @Html.TextBoxFor(x => x.title, new { @class = "form-control" })
+    <br />
+    <label>GitHub Linki</label>
+    @Html.TextBoxFor(x => x.GitHubUrl, new { @class = "form-control" })
+    <br />
+
+    <button class="btn btn-outline-primary">Kaydet</button>
+
+</form>

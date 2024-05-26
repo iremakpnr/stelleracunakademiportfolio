@@ -1,0 +1,18 @@
+﻿﻿@model stelleracunakademiportfolio.Models.tbl_service
+@{
+    ViewBag.Title = "UpdateService";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h3>Hizmet Güncelleme Sayfası</h3>
+
+<form method="post">
+    @Html.HiddenFor(x => x.serviceID)
+    <label>Hizmet Adı</label>
+    @Html.TextBoxFor(x => x.servicename, new { @class = "form-control" })
+    <br />
+    <label>Hizmet İkonu</label>
+    @Html.TextBoxFor(x => x.serviceikon, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-outline-primary">Güncelle</button>
+</form>

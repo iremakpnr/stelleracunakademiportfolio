@@ -1,0 +1,25 @@
+﻿
+@model List<stelleracunakademiportfolio.Models.tbl_socialmedia>
+
+<footer class="page-footer">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-sm-6">
+                <p>
+                    Copyright
+                    <script></script> &copy; @DateTime.Now.Year <a href="http://www.devcrud.com" target="_blank">Portfolyo Projesi</a>
+                </p>
+            </div>
+            <div class="col-sm-6">
+                <div class="socials">
+                    @foreach (var item in Model)
+                    {
+                        <a class="social-item" href="@item.Url" target="_blank"><i class="@item.icon" alt="@item.SocialMediaLink"></i></a>
+                    }
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>

@@ -1,0 +1,26 @@
+﻿@model stelleracunakademiportfolio.Models.tbl_skill
+@{
+    ViewBag.Title = "UpdateSkill";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+
+<h3>Yetenek Güncelleme Sayfası</h3>
+
+<form method="post">
+    @Html.HiddenFor(x => x.skillID)
+    <label>Yetenek Adı</label>
+    @Html.TextBoxFor(x => x.skillname, new { @class = "form-control" })
+    <br />
+    <label>Başlık</label>
+    @Html.TextBoxFor(x => x.title, new { @class = "form-control" })
+    <br />
+    <label>Açıklama</label>
+    @Html.TextAreaFor(x => x.description, 5, 1, new { @class = "form-control" })
+    <br />
+    <label>Yüzdelik Değer</label>
+    @Html.TextBoxFor(x => x.value, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-outline-primary">Güncelle</button>
+
+</form>
+

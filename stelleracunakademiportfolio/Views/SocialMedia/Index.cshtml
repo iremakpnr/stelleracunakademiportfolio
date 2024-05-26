@@ -1,0 +1,34 @@
+﻿@model List<stelleracunakademiportfolio.Models.tbl_socialmedia>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+    int count = 0;
+}
+
+<h3>Sosyal Medya</h3>
+
+<table class="table table-bordered table-hover">
+    <tr>
+        <th>#</th>
+        <th>Sosyal Medya Adı</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        count++;
+        <tr>
+            <th>@count</th>
+            <td><a href="@item.Url" target="_blank">@item.SocialMediaLink</a>  </td>
+
+            <td><a href="/SocialMedia/DeleteSocialMedia/@item.SocialMediaID" class="btn btn-outline-danger">Sil</a></td>
+            <td><a href="/SocialMedia/UpdateSocialMedia/@item.SocialMediaID" class="btn btn-outline-info">Güncelle</a></td>
+        </tr>
+    }
+
+</table>
+
+<br />
+
+<a href="/SocialMedia/AddSocialMedia" class="btn btn-outline-primary">Yeni Sosyal Medya Ekle</a>

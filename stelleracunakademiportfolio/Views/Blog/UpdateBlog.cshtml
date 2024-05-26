@@ -1,0 +1,28 @@
+﻿@model stelleracunakademiportfolio.Models.tbl_Blog
+@{
+    ViewBag.Title = "UpdateBlog";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+
+
+<h3>Makale Güncelleme Sayfası</h3>
+
+<form method="post">
+    @Html.HiddenFor(x => x.BlogID)
+    <label>Makale Adı</label>
+    @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+    <br />
+    <label>Makalenin Linki</label>
+    @Html.TextBoxFor(x => x.Url, new { @class = "form-control" })
+    <br />
+    <label>Açıklama</label>
+    @Html.TextAreaFor(x => x.Description, 5, 1, new { @class = "form-control" })
+    <br />
+    <label>Makalenin Sahibi</label>
+    @Html.TextBoxFor(x => x.Writer, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-outline-primary">Güncelle</button>
+
+</form>
+
+

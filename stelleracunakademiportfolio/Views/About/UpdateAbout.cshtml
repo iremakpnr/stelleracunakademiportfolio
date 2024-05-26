@@ -1,0 +1,28 @@
+﻿@model stelleracunakademiportfolio.Models.tbl_abouti 
+@{
+    ViewBag.Title = "UpdateAbout";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+
+<h3>Hakkımda Güncelleme Sayfası</h3>
+<br />
+
+<form method="post">
+    <input type="hidden" name="AboutID" class="form-control" value=@Model.AboutID  />
+    <label>Resim Url</label>
+    <input type="text" name="image" class="form-control" value="@Model.image" />
+    <br />
+    <label>Ad Soyad</label>
+    <input type="text" name="NameSurname" class="form-control" value=@Model.NameSurname  />
+    <br />
+    <label>Unvan</label>
+    <input type="text" name="title" class="form-control" value=@Model.title />
+    <br />
+    <label>Başlık</label>
+    <input type="text" name="Description" class="form-control" value=@Model.Description />
+    <br />
+
+    <button class=" btn btn-outline-primary">GÜNCELLE</button>
+
+
+</form>

@@ -1,0 +1,32 @@
+﻿@model List<stelleracunakademiportfolio.Models.tbl_Blog>
+
+
+<section id="blog" class="section">
+    <div class="container text-center">
+        <h6 class="subtitle">Bloğum</h6>
+        <h6 class="section-title mb-4">Makalelerim</h6>
+        <p class="mb-5 pb-4">Medium hesabımda yayınladığım makalelerime burdan erişebilirsiniz. </p>
+        @foreach (var item in Model)
+        {
+            <div class="row text-left">
+                <div class="col-md-4">
+                    <div class="card border mb-4">
+                        <img src="assets/imgs/blog-1.jpg" alt="" class="card-img-top w-100">
+                        <div class="card-body">
+                            <h5 class="card-title">@item.Title</h5>
+                            <div class="post-details">
+                                <a href="javascript:void(0)">Yazar: @item.Writer</a>
+                                <a href="javascript:void(0)"><i class="ti-thumb-up"></i> </a>
+                                <a href="javascript:void(0)"><i class="ti-comment"></i> </a>
+                            </div>
+                            <p>@item.Description</p>
+                            <a href="javascript:void(0)">Read More... @item.Url </a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+
+    </div>
+</section>

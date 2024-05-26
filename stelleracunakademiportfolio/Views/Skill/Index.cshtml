@@ -1,0 +1,41 @@
+﻿﻿@model List<stelleracunakademiportfolio.Models.tbl_skill>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+    int count = 0;
+}
+
+<h3>Yeteneklerim</h3>
+
+<table class="table table-bordered table-hover">
+    <tr>
+        <th>#</th>
+        <th>Yetenek Adı</th>
+        <th>Başlık</th>
+        <th>Açıklama</th>
+        <th>Değer</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        count++;
+        <tr>
+            <th>@count</th>
+            <td>@item.skillname</td>
+            <td>@item.title</td>
+            <td>@item.description</td>
+            <td>@item.value</td>
+
+            <td><a href="/Skill/DeleteSkill/@item.skillID" class="btn btn-outline-danger">Sil</a></td>
+            <td><a href="/Skill/UpdateSkill/@item.skillID" class="btn btn-outline-info">Güncelle</a></td>
+        </tr>
+    }
+
+</table>
+
+<br />
+
+<a href="/Skill/AddSkill" class="btn btn-outline-primary">Yeni Yetenek Ekle</a>

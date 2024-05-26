@@ -1,0 +1,41 @@
+﻿@model List<stelleracunakademiportfolio.Models.tbl_project>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+    int count = 0;
+}
+
+<h2>PROJELERİM</h2>
+
+
+<table class="table table-bordered table-hover">
+    <tr>
+        <th>#</th>
+        <th>Açıklama</th>
+        <th>Resim</th>
+        <th>metin</th>
+        <th>GitHub linki</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+
+    </tr>
+    @foreach (var item in Model)
+    {
+        count++;
+        <tr>
+            <th>@count</th>
+            <td>@item.description</td>
+            <td><img src="@item.imageUrl" style="height:50px;width:50px" />   </td>
+            <td>@item.title</td>
+            <td>@item.GitHubUrl</td>
+            <td><a href="/Project/DeleteProject/@item.projectID" class="btn btn-outline-danger">Sil</a></td>
+            <td><a href="/Project/UpdateProject/@item.projectID" class="btn btn-outline-info">Güncelle</a></td>
+        </tr>
+    }
+</table>
+
+<br />
+
+<a href="/Project/AddProject" class="btn btn-outline-primary">Proje Ekle</a>
+
+

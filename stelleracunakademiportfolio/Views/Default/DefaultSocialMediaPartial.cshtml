@@ -1,0 +1,16 @@
+﻿﻿@model List<stelleracunakademiportfolio.Models.tbl_socialmedia>
+
+
+
+
+
+
+<div class="socials mt-4">
+
+    @foreach (var item in Model)
+    {
+        <a class="social-item" href="@item.Url" target="_blank"><i class="@item.icon"></i></a>
+    }
+
+
+</div>
